@@ -3,10 +3,18 @@ var WebpackDevServer = require('webpack-dev-server');
 var config = require('./webpack.config');
 
 new WebpackDevServer(webpack(config), {
-  publicPath: config.output.publicPath,
+  contentBase: './dist',
   hot: true,
-  historyApiFallback: true
-}).listen(3000, 'localhost', function (err, result) {
+  historyApiFallback: true,
+  stats: {
+    assets: true,
+    colors: true,
+    version: false,
+    timings: true,
+    chunks: false,
+    chunkModules: false
+  },
+}).listen(3000, '0.0.0.0', function (err, result) {
   if (err) {
     return console.log(err);
   }

@@ -2,3 +2,9 @@ node_modules
 npm-debug.log
 .DS_Store
 dist
+dist/*
+!dist/index.html
+tags
+*.orig
+.nyc_output/
+coverage/
